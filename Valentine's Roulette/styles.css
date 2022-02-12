@@ -1,0 +1,254 @@
+#app {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+body {
+  background-image: url('img/heart-background.jpg');
+  margin: 0;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+  height: 20%;
+}
+
+.hidden{
+  display: none;
+}
+
+.unhidden{
+  display: block;
+}
+
+.title{
+  position: fixed;
+  left: 50%;
+  width: 750px;
+  margin-left: -350px;
+  max-width: 100%
+  height: auto;
+  top: 30px;
+  /* height: auto;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 650px; /* Need a specific value to work */ */
+}
+
+.info{
+  width: 50px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  border-radius: 50%;
+
+}
+.text-box{
+  width: 600px;
+  right: 80px;
+  top: 180px;
+  position: relative;
+  height: auto;
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.display{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  width: 400px;
+  height: 50px;
+  border: 4px solid  #da7095;
+  background-color: #e2d0e2;
+  border-radius: 13px;
+  bottom: 30px;
+  text-align: center;
+  font-family: sans-serif;
+  vertical-align: middle;
+  font-size: 1.2rem;
+  margin: 20px auto;
+}
+
+.marker {
+  display: none;
+  position: absolute;
+  left: 148px;
+  width: 100px;
+  top: -10px;
+  z-index: 2;
+}
+
+.wheel {
+  display: none;
+  width: 100%;
+  margin-top: 30px;
+  max-width: 900px;
+}
+
+.spin-button {
+  display: none;
+  width: 250px;
+  margin: 20px auto;
+}
+.button{
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.play-button {
+  position: relative;
+  left: 130px;
+  width: 150px;
+  margin: 40px auto;
+  top: 170px;
+}
+
+.blur{
+  animation: blur 5s;
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(1.5px);
+  }
+  80% {
+    filter: blur(1.5px):
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+@keyframes fadein {
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein {
+    0%{
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.animation-area {
+	width: 100%;
+	height: 100vh;
+}
+.box-area {
+	/* position: absolute; */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.box-area li {
+	position: absolute;
+	display: block;
+	list-style: none;
+	/* width: 25px;
+	height: 25px;
+	background: rgba(255, 255, 255, 0.2); */
+	animation: animate 20s linear infinite;
+	bottom: -150px;
+}
+.box-area li:nth-child(1) {
+	left: 86%;
+	width: 80px;
+	height: 80px;
+	animation-delay: 0s;
+}
+.box-area li:nth-child(2) {
+	left: 12%;
+	width: 30px;
+	height: 30px;
+	animation-delay: 1.5s;
+	animation-duration: 10s;
+}
+.box-area li:nth-child(3) {
+	left: 70%;
+	width: 100px;
+	height: 100px;
+	animation-delay: 5.5s;
+}
+.box-area li:nth-child(4) {
+	left: 42%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+.box-area li:nth-child(5) {
+	left: 65%;
+	width: 40px;
+	height: 40px;
+	animation-delay: 0s;
+}
+.box-area li:nth-child(6) {
+	left: 15%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 3.5s;
+}
+@keyframes animate {
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-800px) rotate(360deg);
+		opacity: 0;
+	}
+}
+
+.heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    z-index: -2;
+}
+
+.heart:before, .heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: pink;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    z-index: -2;
+}
+
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+    z-index: -2;
+}
